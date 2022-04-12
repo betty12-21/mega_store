@@ -1,0 +1,261 @@
+<div class="container py-5" >
+        
+    <div class="row">
+         
+        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
+            <h1 class="h2 pb-4">Categories</h1>
+            <ul class="list-unstyled templatemo-accordion"  id="y">
+                <li class="pb-3">
+                    <a class="d-flex justify-content-between h3 text-decoration-none" href="#x1"  ng-click="$event.preventDefault()" data-toggle="collapse" >
+                        Price
+                        <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
+                    </a>
+                    <ul class="collapse show list-unstyled pl-3"  data-parent="#y" id="x1" ng-click="$event.preventDefault()">
+                         
+                        <li><a class="text-decoration-none" href="#">$15000-$20000</a></li> 
+                        <li><a class="text-decoration-none" href="#">$250000-$30000</a></li>
+                        <li><a class="text-decoration-none" href="#">$350000-$40000</a></li>
+                    </ul>
+                </li>
+                <li class="pb-3">
+                    <a class="d-flex justify-content-between h3 text-decoration-none" href="#x2" data-toggle="collapse"   ng-click="$event.preventDefault()">
+                        Company
+                        <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>
+                    </a>
+                    <ul  class="collapse show list-unstyled pl-3"  data-parent="#y" class="hide" id="x2" ng-click="$event.preventDefault()">
+                        <li><a class="text-decoration-none" href="#">HP</a></li>
+                        <li><a class="text-decoration-none" href="#">DELL</a></li>
+                        <li><a class="text-decoration-none" href="#">TOSHIBA</a></li>
+                    </ul>
+                </li>
+                <li class="pb-3">
+                    <a class="d-flex justify-content-between h3 text-decoration-none" href="#x3" ng-click="$event.preventDefault()"  data-toggle="collapse">
+                        Condition
+                        <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>
+                    </a>
+                    <ul class="collapse show list-unstyled pl-3" data-parent="#y" id="x3"  ng-click="$event.preventDefault()">
+                        <li><a class="text-decoration-none" href="#">New</a></li>
+                        <li><a class="text-decoration-none" href="#">Used</a></li>
+                        
+                    </ul>
+                </li>
+            </ul>
+        </div>
+       <!--start of the model-->
+       <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                  <H3 STYLE="color:green"> ADD NEW ITEM</H3>
+                </div>
+                <div class="modal-body">
+                    <form class="well" ng-submit="addUser()">
+                        <div class="form-group">
+                            <label>Type of the Item</label>
+                            <select  >
+                                <option >select....</option>
+                                <option value="smartphone">smartphone</option>
+                                <option value="Laptops">Laptops</option>
+                                <option value="cases">cases</option>
+
+                            </select>
+                        </div>
+						<BR>
+                        <div class="form-group">
+                            <label>Item Name</label>
+                            <input type="text" class="form-control" ng-model="name">
+                        </div>
+                        <div class="form-group">
+                            <label>Price</label>
+                            <input type="number" class="form-control" ng-model="price">
+                        </div>
+                        <div class="form-group">
+                            <label>Company</label>
+                            <input type="text" class="form-control" ng-model="company">
+                        </div>
+                        <BR>
+                        <div class="form-group">
+                            <label>Condition</label><BR>
+                            <input type="radio"  ng-model="condition" value="used">USED<br>
+                            <input type="radio" ng-model="condition" value="new">NEW
+                        </div>
+                        <BR>
+                        <div class="form-group">
+                            <label>Image</label>
+                            <input type="file" accept="image/*" mds-file file="x" base64="y">
+                        </div>
+                       
+                       
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!---end of the model --->
+        
+        <div  class="col-lg-10 col-md-9 col-sm-6 col-xs-12" >
+            <button type="button" style="bottom:0px;right:400; !important" class="btn  btn-success"   data-toggle="modal" data-target="#myModal">add new product</button>
+              <br><hr>
+            <nav class="navbar navbar-expand-lg navbar-light shadow" id="templatemo_nav_top">
+                <div class="container d-flex justify-content-between align-items-center ">
+
+                    <div class="flex-fill">
+
+
+                        <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto" class="nav nav-tabs" style="font-size: 1em;font-size: 1.3em;font-size: 1.9em;font-size: 2em;font-size: 2.4em;font-size: 2.6em;font-size: 2.6em;font-size: 2.8em;font-size: 3.7em;font-size: 3.6em;font-size: 1.4em;font-size: 1.3em;font-size: 0.8em;font-size: 0.6em;font-size: 0.5em;font-size: 0.4em;font-size: 0.3em;font-size: 0.1em;font-size: 0em;line-height: 29px;letter-spacing: 0.6em;">
+
+                            <li class="nav-item font" class="active">
+                               <a  href="#elect"  class="nav-link"  ng-click="$event.preventDefault()" data-toggle="tab">Smartphones</a>
+                            </li>
+
+                           
+                            <li  class="nav-item" >
+                         <a href="#cloth" class="nav-link" ng-click="$event.preventDefault()" data-toggle="tab">Laptops</a>
+                           </li>
+
+                             <li  class="nav-item">
+                              <a href="#food" class="nav-link" ng-click="$event.preventDefault()" data-toggle="tab">cases</a>
+                            </li>
+       
+
+                            </ul>
+                        </div>
+                    
+                </div>
+            </nav>
+          
+
+       
+    
+        <br>
+         
+            <div class="tab-content">
+                <div id='elect' class="tab-pane  active in">    
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 thumbnail" ng-repeat="product in products">
+                    <div class="card mb-4 product-wap rounded-0">
+                        <div class="card rounded-0">
+                    <img src="{{product.img}}" style="width:100%;height:200px">
+                    <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                        <ul class="list-unstyled">
+                            
+                            <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li>
+                            <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i class="far fa-eye"></i></a></li>
+                            <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i class="fas fa-cart-plus"></i></a></li>
+                        </ul>
+                    </div>
+                        </div>
+                    <div class="card-body">
+                        <a href="shop-single.html" class="h3 text-decoration-none"> {{product.name}}</a>
+                        
+                        <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                            
+                            <li style="color: green;">{{product.price|currency}}</li>
+                            <li class="pt-2">
+                                <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                <span class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                <span class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                <span class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                            </li>
+                        </ul>
+                        <BR>
+                        <button type="button" class=" d-flex justify-content-center mb-1 btn-group btn-group-justified btn btn-success btn-block" onclick="sweetalertclick()">BUY NOW</button>
+                        <script>
+                        function sweetalertclick(){
+                
+                            Swal.fire(
+                             'Item has been added to shopping list!',
+                            ' click the button to continue!',
+                                'success'
+                                )
+                 
+                             }
+                   </Script>
+                    </div>
+            </div>
+            </div>
+                </div>
+                </div>
+
+                <div id='cloth' class="tab-pane">    
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 thumbnail" ng-repeat="product in products2">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                            <img src="{{product.img}}" style="width:100%;height:200px">
+                            <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                <ul class="list-unstyled">
+                                    <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li>
+                                    <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i class="far fa-eye"></i></a></li>
+                                    <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i class="fas fa-cart-plus"></i></a></li>
+                                </ul>
+                            </div>
+                                </div>
+                            <div class="card-body">
+                                <a href="shop-single.html" class="h3 text-decoration-none"> {{product.name}}</a>
+                                
+                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                                    
+                                    <li style="color: green;">{{product.price|currency}}</li>
+                                    <li class="pt-2">
+                                        <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                                    </li>
+                                </ul>
+                                <BR>
+                                    <button type="button" class=" d-flex justify-content-center mb-1 btn-group btn-group-justified btn btn-success btn-block" onclick="sweetalertclick()">BUY NOW</button>
+                            </div>
+                    </div>
+                    </div>
+                        </div>
+                        </div>
+
+                        
+                <div id='food' class="tab-pane">    
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 thumbnail" ng-repeat="product in products3">
+                            <div class="card mb-4 product-wap rounded-0">
+                                <div class="card rounded-0">
+                            <img src="{{product.img}}" style="width:100%;height:200px">
+                            <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                                <ul class="list-unstyled">
+                                    <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li>
+                                    <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i class="far fa-eye"></i></a></li>
+                                    <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i class="fas fa-cart-plus"></i></a></li>
+                                </ul>
+                            </div>
+                                </div>
+                            <div class="card-body">
+                                <a href="shop-single.html" class="h3 text-decoration-none"> {{product.name}}</a>
+                                
+                                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                                    
+                                    <li style="color: green;" >{{product.price|currency}}</li>
+                                    <li class="pt-2">
+                                        <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+                                        <span class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+                                    </li>
+                                </ul>
+                                <BR>
+                                    <button type="button" class=" d-flex justify-content-center mb-1 btn-group btn-group-justified btn btn-success btn-block" onclick="sweetalertclick()">BUY NOW</button>
+                            </div>
+                    </div>
+                    </div>
+                        </div>
+                        </div>
+                        </div>
+
+
+    </div>
+        </div>
+    </div>

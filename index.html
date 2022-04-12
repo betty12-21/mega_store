@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <script src="dist/sweetalert2.all.min.js"></script>
+    <script src="dist/sweetalert2.min.js"></script>
+     <link rel="stylesheet" href="sweetalert2.min.css">
+    <!-- Load fonts style after rendering the layout styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-route.js"></script>
+    
+    <script>
+        var app = angular.module("myApp",["ngRoute"])
+        app.config(function ($routeProvider) {
+            $routeProvider
+                .when("/",{
+                    templateUrl:"templates/home.html",
+                    controller:"homeCtrl"
+                })
+                .when("/store",{
+                    templateUrl:"templates/store.html",
+                    controller:"storeCtrl"
+                })
+                .when("/fourm",{
+                    templateUrl:"templates/fourm.html",
+                    controller:"fourmCtrl"
+                })
+                .when("/contact",{
+                    templateUrl:"templates/contact.html",
+                    controller:"contactCtrl"
+                })
+                .otherwise({
+                    template:"<h1>404 Page Not Found</h1>"
+                })
+        })
+
+        app.controller("homeCtrl",function ($scope,$rootScope) {
+
+        })
+        app.controller("storeCtrl",function ($scope,$rootScope) {
+            $scope.products=[
+                {name:"Huawei Y7",img:'phones/c1.webp',price:19700,company:"huawei",condition:"New"},
+                {name:"Iphone Mini",img:'phones/c2.jpg',price:15400,company:"iphone",condition:"New"},
+                 {name:"Iphone Se",img:'phones/c5.jpg',price:11940,company:"iphone",condition:"New"},
+                {name:"Huawei Nove5",img:'phones/c4.webp',price:19999,company:"huawei",condition:"New"},
+                {name:"Iphone Se",img:'phones/c5.jpg',price:11940,company:"iphone",condition:"New"},
+                {name:"Samsung J7",img:'phones/c6.jpg',price:18999,company:"samsung",condition:"New"},
+                {name:"Huawei P20",img:'phones/c7.jpg',price:15900,company:"huawei",condition:"New"},
+                {name:"Iphone 6S+",img:'phones/c8.webp',price:18999,company:"iphone",condition:"New"}
+            ]
+            $scope.products2=[
+                {name:"dell-xps-15-9560",img:'assets/img/dell-xps-15-9560.jpg',price:19700,company:"huawei",condition:"New"},
+                {name:"asus Mini",img:'assets/img/asus-transformer-mini-t102ha-10-1-2-1-silver.jpg',price:15400,company:"iphone",condition:"New"},
+                {name:"dell-inspiron J3",img:'assets/img/dell-inspiron-15-5000-15.jpg',price:12500,company:"samsung",condition:"New"},
+                {name:"dell-xps",img:'assets/img/dell-xps-15-9560.jpg',price:19999,company:"huawei",condition:"New"},
+                {name:"dell-inspiron-15",img:'assets/img/dell-inspiron-15-7000-15-6.jpg',price:11940,company:"iphone",condition:"New"},
+                {name:"Lk J7",img:'assets/img/lap3.jpg',price:18999,company:"samsung",condition:"New"},
+                {name:"large-lenovo P20",img:'assets/img/large-lenovo-ideapad-320s-14ikb-14-laptop-grey.jpg',price:15900,company:"huawei",condition:"New"},
+                {name:"large-asus 6S+",img:'assets/img/large-asus-transformer-mini-t102ha-10-1-2-1-silver.jpg',price:18999,company:"iphone",condition:"New"}
+            ]
+            $scope.products3=[
+                {name:"hp-pavilion-power-580",img:'assets/img/hp-pavilion-power-580-015na-gaming-pc.jpg',price:19700,company:"huawei",condition:"New"},
+                {name:"large-dell-inspiron-5675",img:'assets/img/large-dell-inspiron-5675-gaming-pc-recon-blue.jpg',price:15400,company:"iphone",condition:"New"},
+                {name:"large-pc-specialist-vortex-core",img:'assets/img/large-pc-specialist-vortex-core-ii-gaming-pc.jpg',price:12500,company:"samsung",condition:"New"},
+                {name:"large-hp-barebones-omen",img:'assets/img/large-hp-barebones-omen-x-900-099nn-gaming-pc.jpg',price:19999,company:"huawei",condition:"New"},
+                {name:"dell-inspiron-5675-gaming",img:'assets/img/dell-inspiron-5675-gaming-pc-recon-blue.jpg',price:11940,company:"iphone",condition:"New"},
+                {name:"large-acer-aspire-gx",img:'assets/img/large-acer-aspire-gx-781-gaming-pc.jpg',price:18999,company:"samsung",condition:"New"},
+                {name:"dell-inspiron-5675",img:'assets/img/dell-inspiron-5675-gaming-pc-recon-blue.jpg',price:15900,company:"huawei",condition:"New"},
+                {name:"large-lenovo-legion-y520",img:'assets/img/large-lenovo-legion-y520-gaming-pc.jpg',price:18999,company:"iphone",condition:"New"}
+            ]
+            $("button").click(function(){
+        
+       
+
+        
+            $("#myModal").modal("show")
+            })
+        })
+        app.controller("fourmCtrl",function ($scope,$rootScope) {
+
+           
+            $scope.customer=[
+                { img:"male.png",name:"Ahmed",age:17,tit:"Bahri",comm:"it is ggod website"},
+                {img:"female.png",name:"Esraa",age:25,tit:"Bahri",comm:"it is excellent website"}
+
+            ]
+        })
+        app.filter("Filter",function ($rootScope) {
+        return function (customer) {
+            
+            
+                return customer
+           
+    }
+})
+
+
+        
+        app.controller("contactCtrl",function ($scope,$rootScope) {
+
+            $("button:last").click(function(){
+        $("#inner").hide("slow")
+       
+
+        setTimeout(function () {
+            $("#myModal").modal("show")
+        },1000)
+
+        setTimeout(function () {
+            $("input").val("")
+            $("input").val("")
+            $("input").val("")
+            $("textarea").val("")
+
+                $("#inner") .show("slow")
+             },5000)
+
+
+             setTimeout(function () {
+                $("#myModal").modal("hide")
+            },5000)
+
+
+
+
+    })
+
+
+           })
+    </script>
+<script>
+
+        $(document).ready(function () {
+            $("#myImage").carousel({
+                interval:false
+            })
+
+            $("body").on({
+                "activate.bs.scrollspy":function () {
+                    var index=$("#myPills li.active").index()
+                    $("#myImage").carousel(index)
+                }
+            })
+
+            $(".navbar").on({
+                "affix.bs.affix":function () {
+                    $(this).addClass("navbar-fixed-top")
+                    $("#myImage").css({"position":"fixed","top":"50px"})
+                    $("#myPills").css({"position":"fixed","top":"80px"})
+                },
+                "affix-top.bs.affix":function () {
+                    $(this).removeClass("navbar-fixed-top")
+                    $("#myImage").css({"position":"absolute","top":""})
+                    $("#myPills").css({"position":"absolute","top":""})
+                }
+            })
+
+            $(".myForm>button[type='button']").click(function () {
+                console.log("gi")
+                $(".myForm").slideToggle("slow")
+            })
+        })
+
+    </script>
+</head>
+
+<body ng-app="myApp">
+    <!-- Start Top Nav -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
+        <div class="container text-light">
+            <div class="w-100 d-flex justify-content-between">
+                <div>
+                    <i class="fa fa-envelope mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info@company.com">info@company.com</a>
+                    <i class="fa fa-phone mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
+                </div>
+                <div>
+                    <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin fa-sm fa-fw"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Close Top Nav -->
+
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <a class="navbar-brand text-success logo h1 align-self-center" href="home.html">
+                <img src="logo.png"  alt=""  />
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#/!">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#!store">Store</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#!fourm">Fourm</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#!contact">Contact Us</a>
+                        </li>
+                         
+                        <li  class="right:400">
+
+
+                            
+                            <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo">
+                                <i class="fa fa-lock"></i> LOGIN
+                            </a>
+                            </li>
+                      
+                    
+                     
+                    </ul>
+                </div>
+                <div class="navbar align-self-center d-flex">
+                    <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
+                            <div class="input-group-text">
+                                <i class="fa fa-fw fa-search"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
+                        <i class="fa fa-fw fa-search text-dark mr-2"></i>
+                    </a>
+                  
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <!-- Close Header -->
+
+    <!-- Modal -->
+    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="w-100 pt-1 mb-5 text-right">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" method="get" class="modal-content modal-body border-0 p-0">
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
+                    <button type="submit" class="input-group-text bg-success text-light">
+                        <i class="fa fa-fw fa-search text-white"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+     <!-- Modal -->
+     <div class="modal fade bg-white" id="templatemo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="w-100 pt-1 mb-5 text-right">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form class="myForm " action="" method="get">
+                <div class="form-group input-group mb-2">
+                    <input type="text" class="form-control" id="inputModalSearch" name="q"  placeholder="Username" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="inputModalSearch" name="q"  placeholder="Password" class="form-control">
+                </div>
+                <br>
+                <div class="form-group">
+                    
+                    <input type="checkbox">  Remember me
+                  
+                </div>
+
+                <br>
+                <button class="btn btn-success btn-block">Login</button>
+                <button class="btn btn-info btn-block">signup</button>
+               
+            </form>
+        </div>
+    </div>
+
+
+
+
+    <!-- Start Banner Hero -->
+    <ng-view></ng-view>
+    
+    <!-- Start Footer -->
+    <footer class="bg-dark" id="tempaltemo_footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">esuda (electro sudan shopping) </h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt fa-fw"></i>
+                            123 Consectetur at ligula 10660
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-fw"></i>
+                            <a class="text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope fa-fw"></i>
+                            <a class="text-decoration-none" href="mailto:info@company.com">info@company.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Products</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="#">smartphone</a></li>
+                    <li><a class="text-decoration-none" href="#">desktop cases</a></li>
+                    <li><a class="text-decoration-none" href="#">laptops</a></li>
+                        
+                    </ul>
+                </div>
+
+               
+
+            </div>
+
+            <div class="row text-light mb-4">
+                <div class="col-12 mb-3">
+                    <div class="w-100 my-3 border-top border-light"></div>
+                </div>
+                <div class="col-auto me-auto">
+                    <ul class="list-inline text-left footer-icons">
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="http://facebook.com/"><i class="fab fa-facebook-f fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://twitter.com/"><i class="fab fa-twitter fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://www.linkedin.com/"><i class="fab fa-linkedin fa-lg fa-fw"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                
+        </div>
+
+      
+
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Start Script -->
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/templatemo.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <!-- End Script -->
+</body>
+
+</html>

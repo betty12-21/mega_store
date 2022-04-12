@@ -1,0 +1,79 @@
+
+
+
+    <!-- Start Top Nav -->
+   
+
+         <!-- Start Content Page -->
+   
+
+    
+
+    <!-- Start Contact -->
+    <div class="container py-5">
+       
+        <ul class="list-group py-5"  ng-repeat="x in customer|Filter">
+            <li class="list-group-item container bg-success">
+                
+                
+
+                <div class=" media container ">
+                    <div class="row">
+                    <div class="col-xs-4">
+                    <div class=" media-left">
+                        <img src="{{x.img}}" class="media-object" style="width:64px">
+                    </div>
+                    <div class="media-body " style="color:white">
+                        <h4>Name:{{x.name}}</h4>
+                        <p>Age:{{x.age}}</p>
+                    </div>
+
+                    <div class="col-xs-4">
+
+                        <h4 style="color:white">Title:{{x.tit}}</h4>
+                        <p style="color:white">Comment:{{x.comm}} </p>
+                    </div>
+
+                    </div>
+                    </div>
+                </div>
+               
+            </li>
+          
+        </ul>
+    
+    </div>
+    
+
+    <div class="container py-5">
+        <div class="row py-5">                                       
+            <form class="col-md-9 m-auto" ng-submit="customer.push({img:'male.png',name:name,age:age,tit:tit,comm:comm,});name='';age='';tit='';comm='' ">
+                <div class="row">
+                    <div class="form-group col-md-6 mb-3">
+                        <label for="inputname">Name</label>
+                        <input type="text" class="form-control mt-1" id="name" name="name" ng-model="name" placeholder="Name">
+                    </div>
+                    <div class="form-group col-md-6 mb-3">
+                        <label for="inputemail">Age</label>
+                        <input type="text" class="form-control mt-1" id="age" name="age" ng-model="age" placeholder="Age">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="inputsubject">Title</label>
+                    <input type="text" class="form-control mt-1" id="title" name="title" ng-model="tit" placeholder="Title">
+                </div>
+                <div class="mb-3">
+                    <label for="inputmessage">Comment</label>
+                    <textarea type="text" class="form-control mt-1" id="comment" name="X" ng-model="comm" placeholder="your Comment " rows="4"></textarea>
+                </div>
+                <div class="row">
+                    <div class="col text-end mt-2">
+                        <button  class="btn btn-success btn-lg px-3" >SEND</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- End Contact -->
+      <!-- Start Footer -->
+     
